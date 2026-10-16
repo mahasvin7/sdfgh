@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * SOUL Radiology — Design Tokens and Base System
+ * Brand & UI Kit Version 1.0 (SFIC 2026 Theme 03 Swasth & Samavesh Bharat)
+ */
+:root {
+  --color-brand-navy: #17365D;
+  --color-brand-teal: #13836B;
+  --color-brand-saffron: #F3A536;
+  --color-text-primary: #1F2937;
+  --color-text-muted: #5B6573;
+  --color-surface-page: #F5F7FA;
+  --color-surface-card: #FFFFFF;
+  --color-border-default: #D9E1EA;
+  --color-surface-teal-soft: #E8F5F1;
+  --color-surface-blue-soft: #EAF0F8;
+  --color-surface-amber-soft: #FFF5E3;
+  --color-status-error: #B42318;
+  --color-status-success: #16794B;
+  --radius-card: 12px;
+  --radius-control: 8px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --content-max-width: 1200px;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-surface-page);
+    color: var(--color-text-primary);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-teal);
+    outline-offset: 2px;
+  }
+}
+
+/* Indian Government Portal Accessibility Text Resizing */
+body.font-size-sm {
+  font-size: 14px;
+}
+body.font-size-base {
+  font-size: 16px;
+}
+body.font-size-lg {
+  font-size: 18px;
+}
+
+/* High Contrast Mode for Accessibility */
+body.high-contrast {
+  background-color: #0b0f19 !important;
+  color: #f8fafc !important;
+}
+body.high-contrast .bg-white,
+body.high-contrast .bg-surface-card {
+  background-color: #111827 !important;
+  color: #f8fafc !important;
+  border-color: #374151 !important;
+}
+body.high-contrast .text-text-muted,
+body.high-contrast .text-slate-500,
+body.high-contrast .text-slate-600 {
+  color: #9ca3af !important;
+}
+
+/* Decent button styling - neat, human-crafted 8px corners */
+.btn-primary {
+  background-color: var(--color-brand-navy);
+  color: #ffffff;
+  border-radius: var(--radius-control);
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid transparent;
+}
+.btn-primary:hover {
+  background-color: #122c4d;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--color-brand-navy);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease-in-out;
+}
+.btn-secondary:hover {
+  background-color: var(--color-surface-blue-soft);
+  border-color: #b8c8d8;
+}
+
+.btn-teal {
+  background-color: var(--color-brand-teal);
+  color: #ffffff;
+  border-radius: var(--radius-control);
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid transparent;
+}
+.btn-teal:hover {
+  background-color: #0f6c58;
+}
+
+/* Clean cards */
+.brand-card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* Print Stylesheet for Reports */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+  }
+  .brand-card {
+    border: 1px solid #cccccc !important;
+    box-shadow: none !important;
+  }
+}
